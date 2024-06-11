@@ -1,23 +1,18 @@
-const mongoose = require('mongoose');
+const { MongoClient } = require('mongodb');
+const {mongoose} = require('mongoose')
+async function connectToMongoDB() {
+  const uri = "mongodb+srv://sadafhameed:mern123@cluster0.fsvtyip.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+  const client = new MongoClient(uri);
 
-const mongoURI = 'mongodb+srv://sadafhameed:mern123@cluster0.fsvtyip.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
-
-const mongoDB = async () => {
   try {
-    await mongoose.connect(mongoURI);
-    console.log('connected');
-    
-    const fetchedData = mongoose.connection.db.collection('food_items');
-    fetchedData.find({}).toArray((err, data) => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log(data);
-      }
-    });
+    // Connect the client to the server
+    await client.connect();
+    console.log("Connected successfully to MongoDB!");
+    return client; // Return the connected client
   } catch (err) {
-    console.log('---', err);
+    console.error('Error connecting to MongoDB: ', err);
+    throw err; // Throw the error to handle it in the caller
   }
-};
+}
 
-module.exports = mongoDB;
+module.exports = connectToMongoDB; // Export the connection function
