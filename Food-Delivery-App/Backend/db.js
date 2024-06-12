@@ -1,18 +1,21 @@
-const { MongoClient } = require('mongodb');
-const {mongoose} = require('mongoose')
-async function connectToMongoDB() {
-  const uri = "mongodb+srv://sadafhameed:mern123@cluster0.fsvtyip.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-  const client = new MongoClient(uri);
+const mongoose = require('mongoose');
 
+const mongoURI = 'mongodb+srv://sadafhameed:mern123@cluster0.fsvtyip.mongodb.net/GoFoodMern?retryWrites=true&w=majority&appName=Cluster0';
+
+const mongoDB = async () => {
   try {
-    // Connect the client to the server
-    await client.connect();
-    console.log("Connected successfully to MongoDB!");
-    return client; // Return the connected client
-  } catch (err) {
-    console.error('Error connecting to MongoDB: ', err);
-    throw err; // Throw the error to handle it in the caller
-  }
-}
+    await mongoose.connect(mongoURI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log('Connected to MongoDB Atlas');
 
-module.exports = connectToMongoDB; // Export the connection function
+    const fetchedData = mongoose.connection.db.collection('food_items');
+    const data = await fetchedData.find({}).toArray();
+    // console.log('Data fetched from food_items collection:', data);
+  } catch (err) {
+    console.error('Error connecting to MongoDB:', err);
+  }
+};
+
+module.exports = mongoDB;
