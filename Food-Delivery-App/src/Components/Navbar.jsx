@@ -10,8 +10,9 @@ function Navbar() {
     </button> 
     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div className="navbar-nav">
-        <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+        <Link className="nav-link" aria-current="page" to="/">Home</Link>
         <Link className="nav-link" to="/login">Login</Link>
+        <Link className="nav-link" to="/createuser">SignUp</Link>
       </div>
     </div>
   </div>
