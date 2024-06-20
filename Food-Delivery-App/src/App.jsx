@@ -1,6 +1,5 @@
 import Home from './screens/Home'; 
 import {
-  
   BrowserRouter as Router,
    Routes, 
    Route
