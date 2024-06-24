@@ -1,12 +1,5 @@
 const mongoose = require('mongoose');
 const mongoURI = 'mongodb+srv://sadafhameed:mern123@cluster0.fsvtyip.mongodb.net/GoFoodMern?retryWrites=true&w=majority&appName=Cluster0';
-
-
-
-
-
-
-
 const mongoDB = async () => {
   try {
     await mongoose.connect(mongoURI, {
