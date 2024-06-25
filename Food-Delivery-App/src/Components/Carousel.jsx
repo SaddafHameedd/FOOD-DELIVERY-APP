@@ -5,6 +5,9 @@ import burger from "../assets/burger.jpg";
 import pastry from "../assets/pastry.jpg";
 import barbeque from "../assets/barbeque.jpg";
 function Carousel() {
+
+
+  
   return (
     <div>
       <div
