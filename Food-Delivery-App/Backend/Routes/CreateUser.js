@@ -2,14 +2,6 @@ const express = require('express');
 const router = express.Router();
 const User = require('../Models/User');
 const { body, validationResult } = require('express-validator');
-
-
-
-
-
-
-
-
 router.post('/createuser', [
   body('email').isEmail(),
   body('name').isLength({ min: 5 }),
