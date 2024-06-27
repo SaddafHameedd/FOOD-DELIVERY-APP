@@ -11,6 +11,9 @@ function SignUp() {
     body:JSON.stringify()
   })
 }
+
+
+
   return (
     <>
     <div className='container'>
