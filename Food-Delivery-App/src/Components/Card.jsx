@@ -21,6 +21,11 @@ function Card() {
               <option value="half">Half</option>
               <option value="half">Full</option>
             </select>
+
+
+
+
+            
             <div className="d-inline h-100 fs-5">Total Price</div>
           </div>
         </div>
