@@ -7,6 +7,10 @@ import barbeque from "../assets/barbeque.jpg";
 function Carousel() {
   return (
     <div>
+
+
+
+
       <div
         id="carouselExampleFade"
         className="carousel slide carousel-fade"
