@@ -2,12 +2,6 @@ import React from 'react'
 import {Link} from 'react-router-dom';
 function SignUp() {
   const handleSubmit=async(e)=>{
-
-
-
-
-
-
     e.preventDefault();
     const respose = fetch('https://localhost:5000/api/createuser'),{
 
