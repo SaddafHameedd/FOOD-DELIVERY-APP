@@ -1,4 +1,9 @@
 function Card() {
+
+
+
+
+
   return (
     <div>
       <div className="card mt-3" style={{ width: "18rem", maxHeight: "360px" }}>
